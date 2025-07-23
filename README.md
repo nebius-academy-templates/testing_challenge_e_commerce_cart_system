@@ -1,10 +1,11 @@
-# Lesson 10: Testing Challenge - E-commerce Cart System
+In this task, you'll team up with Cursor to write unit tests for a shopping cart system that cover all the core functionality and edge cases.
 
-##  Challenge Overview
-You have an e-commerce shopping cart system that needs comprehensive unit tests. You'll use Cursor to generate tests that cover the testing pyramid's foundation: **unit tests** (which should be 70% of your testing efforts).
+## 🛒 Project and goal
 
-##  The System
-The `ShoppingCart` class handles core e-commerce functionality:
+Check that [**`testing_challenge_e_commerce_cart_system`**](https://github.com/nebius-academy-templates/testing_challenge_e_commerce_cart_system) has been added to your GitHub profile — you'll find all the code there.
+
+The core features of the shopping cart system are implemented in the `ShoppingCart` class:
+
 - Adding items to the cart
 - Removing items from the cart
 - Calculating totals with tax and discounts
@@ -12,64 +13,84 @@ The `ShoppingCart` class handles core e-commerce functionality:
 - Validating inventory availability
 - Managing cart persistence
 
-##  Your Mission
-Use Cursor to:
-1. **Analyse the cart system** and understand all the business logic
-2. **Generate comprehensive unit tests** covering happy paths, edge cases, and error conditions
-3. **Achieve >90% test coverage** with meaningful tests
-4. **Document your testing strategy** and approach
+Your goal is to:
 
-##  Files Provided
-- `shopping_cart.py` - The main cart system class
-- `product.py` - Product model with pricing and inventory
-- `discount_codes.py` - Discount code validation system
-- `inventory_service.py` - Inventory checking service
-- `test_requirements.txt` - Testing dependencies
+1. Understand the business logic
+2. Generate comprehensive unit tests covering happy paths, edge cases, and error conditions
+3. Achieve >90% test coverage with meaningful tests
+4. Document your testing strategy and approach
 
-##  Success Criteria
+## 📂 **Files provided**
 
-### Phase 1: System Analysis 
-1. **Use Cursor to analyse the cart system**
-   - What are all the methods and their responsibilities?
-   - What are the possible failure scenarios?
-   - What edge cases need to be tested?
-   - What external dependencies exist?
+| File | Purpose |
+| --- | --- |
+| `shopping_cart.py` | Main `ShoppingCart` class |
+| `product.py` | Product model (pricing, inventory) |
+| `discount_codes.py` | Discount code validation logic |
+| `inventory_service.py` | External inventory-checking service |
+| `test_requirements.txt` | Testing dependencies (pytest, coverage, etc.) |
 
-### Phase 2: Test Planning 
-2. **Create a test plan document**
-   - List all methods that need testing
-   - Identify test scenarios for each method
-   - Plan your mocking strategy for external dependencies
-   - Define your test data setup
+## **🔍 Step 1: Analyze the system**
 
-### Phase 3: Test Implementation 
-3. **Generate comprehensive unit tests**
-   - Happy path tests for all core functionality
-   - Edge case tests (empty cart, invalid items, etc.)
-   - Error condition tests (network failures, invalid data)
-   - Boundary tests (minimum/maximum values)
+Start by understanding the system's logic and structure. Use Cursor to explore the code with questions like:
 
-### Phase 4: Coverage Analysis
-4. **Measure and analyse test coverage**
-   - Run coverage analysis
-   - Identify any gaps in coverage
-   - Add additional tests if needed
-   - Document coverage results
+- What does each method do?
+- What are the possible failure scenarios?
+- What edge cases need to be tested?
+- What external dependencies exist?
 
-##  Required Test Categories
+## **📝 Step 2: Create a test plan**
 
-### 1. Cart Management Tests
-```python
+Use Cursor to create a test plan document called `test_plan.md`. It should outline:
+
+- Methods under test
+- Test scenarios (happy path, edge cases, errors)
+- Mocking strategy and test data setup
+- Coverage targets and risk assessment
+
+## **🧪 Step 3: Write the tests**
+
+Generate comprehensive unit tests based on your plan:
+
+- Happy path tests for all core functionality
+- Edge case tests (empty cart, invalid items, etc.)
+- Error condition tests (network failures, invalid data)
+- Boundary tests (minimum/maximum values)
+
+## **📊 Step 4: Measure coverage**
+
+Run a coverage analysis and identify any gaps. If needed, add more tests to fill them.
+
+Document your coverage results in `coverage_report.md`.
+
+## **💡 Advanced challenges (optional)**
+
+1. **Property-based testing**: Use `hypothesis` to generate test cases.
+2. **Performance testing**: Add tests for cart performance under load.
+3. **Integration tests**: Test the cart with a real database or services.
+4. **Mutation testing**: Use `mutmut` to evaluate your test quality.
+5. **CI/CD integration**: Set up automated test running.
+
+## 📖 Requirements
+
+Read the testing requirements and recommendations below. Make sure your project meets them.
+
+## **Required test categories**
+
+### **1. Cart management**
+
+```
 class TestCartManagement:
     # Test adding items to cart
-    # Test removing items from cart  
+    # Test removing items from cart
     # Test updating item quantities
     # Test clearing the cart
     # Test cart persistence
 ```
 
-### 2. Price Calculation Tests
-```python
+### **2. Price calculation**
+
+```
 class TestPriceCalculations:
     # Test basic total calculation
     # Test tax calculation
@@ -78,8 +99,9 @@ class TestPriceCalculations:
     # Test price precision/rounding
 ```
 
-### 3. Discount Code Tests
-```python
+### **3. Discount code**
+
+```
 class TestDiscountCodes:
     # Test valid discount codes
     # Test expired discount codes
@@ -88,8 +110,9 @@ class TestDiscountCodes:
     # Test discount code combinations
 ```
 
-### 4. Inventory Validation Tests
-```python
+### **4. Inventory validation**
+
+```
 class TestInventoryValidation:
     # Test sufficient inventory
     # Test insufficient inventory
@@ -98,8 +121,9 @@ class TestInventoryValidation:
     # Test inventory edge cases
 ```
 
-### 5. Error Handling Tests
-```python
+### **5. Error handling**
+
+```
 class TestErrorHandling:
     # Test invalid input data
     # Test network failures
@@ -108,47 +132,52 @@ class TestErrorHandling:
     # Test timeout scenarios
 ```
 
-##  Testing Requirements
+## **Testing requirements**
 
-### Test Coverage Goals:
-- **Overall Coverage**: >90%
-- **Branch Coverage**: >85%
-- **Critical Path Coverage**: 100%
+### **Test coverage goals**
 
-### Test Quality Standards:
-- **Isolated**: Each test should be independent
-- **Fast**: All tests should run quickly (<5 seconds total)
-- **Reliable**: Tests should pass consistently
-- **Maintainable**: Tests should be easy to understand and modify
-- **Meaningful**: Tests should catch real bugs
+- **Overall coverage**: >90%
+- **Branch coverage**: >85%
+- **Critical path coverage**: 100%
 
-### Mocking Strategy:
-- Mock external services (inventory, payment, email)
-- Don't mock the system under test
-- Use dependency injection where needed
-- Keep mocks simple and focused
+### **Test quality standards**
 
-##  Specific Test Scenarios
+- **Isolated**: Each test should be independent.
+- **Fast**: All tests should run quickly (<5 seconds total).
+- **Reliable**: Tests should pass consistently.
+- **Maintainable**: Tests should be easy to understand and modify.
+- **Meaningful**: Tests should catch real bugs.
 
-### Cart Operations:
-- Add single item to empty cart
-- Add multiple items to cart
-- Add same item multiple times
-- Remove item from cart
-- Remove non-existent item
+### **Mocking strategy**
+
+- Mock external services (inventory, payment, email).
+- Don't mock the system under test.
+- Use dependency injection where needed.
+- Keep mocks simple and focused.
+
+## **Test scenarios**
+
+### **Cart operations**
+
+- Add a single item/multiple items to the cart
+- Add the same item multiple times
+- Remove an item from the cart
+- Remove a non-existent item
 - Update item quantity to zero
-- Update item quantity to negative number
+- Update item quantity to a negative number
 
-### Price Calculations:
-- Calculate total for single item
-- Calculate total for multiple items
+### **Price calculations**
+
+- Calculate the total for a single item
+- Calculate the total for multiple items
 - Calculate tax on various amounts
-- Apply percentage discount
-- Apply fixed amount discount
+- Apply a percentage discount
+- Apply a fixed amount discount
 - Apply multiple discounts
 - Handle currency precision
 
-### Edge Cases:
+### **Edge cases**
+
 - Empty cart operations
 - Maximum cart size limits
 - Very large quantities
@@ -156,7 +185,8 @@ class TestErrorHandling:
 - Negative prices (refunds)
 - Currency conversion scenarios
 
-### Error Conditions:
+### **Error conditions**
+
 - Invalid product IDs
 - Unavailable products
 - Inventory service down
@@ -164,79 +194,64 @@ class TestErrorHandling:
 - Network timeouts
 - Database connection failures
 
-##  Documentation Requirements
+## **Testing best practices**
 
-### 1. Test Plan Document
-```markdown
-# Shopping Cart Test Plan
+- Test behavior, not implementation.
+- Use descriptive test names: e.g. `should_apply_percentage_discount_correctly`.
+- Follow AAA (Arrange — Act — Assert).
+- Aim for one assertion per test.
+- Verify error messages for clarity.
 
-## Test Strategy
-[Your approach to testing this system]
+## **Documentation requirements**
 
-## Test Scenarios
-[Comprehensive list of what you're testing]
+1. `test_plan.md`: Strategy, scenarios, mocking, targets, risks.
 
-## Mocking Strategy  
-[How you'll handle external dependencies]
+```
+#Shopping Cart Test Plan
 
-## Coverage Goals
-[Your specific coverage targets]
+##Test strategy[Your approach to testing this system]
 
-## Risk Assessment
-[What could go wrong and how tests will catch it]
+##Test scenarios[Comprehensive list of what you're testing]
+
+##Mocking strategy[How you'll handle external dependencies]
+
+##Coverage goals[Your specific coverage targets]
+
+##Risk assessment[What could go wrong and how tests will catch it]
 ```
 
-### 2. Test Coverage Report
-```markdown
-# Test Coverage Analysis
+2. `coverage_report.md`: Metrics (line/branch/function), gaps, recommendations.
 
-## Coverage Results
-- Line Coverage: X%
-- Branch Coverage: X%
-- Function Coverage: X%
-
-## Coverage Gaps
-[Any areas not covered and why]
-
-## Test Quality Metrics
-- Total Tests: X
-- Test Execution Time: X seconds
-- Test Reliability: X% pass rate
-
-## Recommendations
-[Improvements for better testing]
 ```
+#Test Coverage Analysis
 
-##  Advanced Challenge (Optional)
-1. **Property-based testing**: Use hypothesis to generate test cases
-2. **Performance testing**: Add tests for cart performance under load
-3. **Integration tests**: Test cart with real database/services
-4. **Mutation testing**: Use mutmut to test your test quality
-5. **CI/CD integration**: Set up automated test running
+##Coverage results
+- Line coverage: X%
+- Branch coverage: X%
+- Function coverage: X%
 
-##  Testing Best Practices
-- **Test behaviour, not implementation**: Focus on what the code does, not how
-- **Use descriptive test names**: Tests should read like documentation
-- **Follow AAA pattern**: Arrange, Act, Assert
-- **One assertion per test**: Keep tests focused and simple
-- **Test error messages**: Ensure errors provide useful information
+##Coverage gaps[Any areas not covered and why]
 
-##  Common Testing Pitfalls
-- **Testing too much**: Don't test framework code or external libraries
-- **Brittle tests**: Tests that break when implementation changes
-- **Slow tests**: Tests that take too long discourage running them
-- **Unclear tests**: Tests that don't explain what they're verifying
-- **Missing edge cases**: Not testing boundary conditions and error scenarios
+##Test quality metrics
+- Total tests: X
+- Test execution time: X seconds
+- Test reliability: X% pass rate
 
-##  Submission Checklist
-- [ ] All cart methods have comprehensive tests
-- [ ] Happy path, edge cases, and error conditions covered
-- [ ] Test coverage >90% achieved
-- [ ] All tests pass consistently
-- [ ] External dependencies properly mocked
-- [ ] Test plan and coverage report completed
-- [ ] Tests are well-documented and maintainable
+##Recommendations[Improvements for better testing]
+```
 
 ---
 
-**This challenge teaches you to use Cursor for generating comprehensive unit tests that form the foundation of a solid testing strategy.** 
+## ✅ **Submission checklist**
+
+- [ ]  All cart methods are tested comprehensively
+- [ ]  Happy paths, edge cases, and error conditions are covered
+- [ ]  Overall coverage >90% and branch coverage >85% achieved
+- [ ]  All tests pass consistently
+- [ ]  External dependencies are properly mocked
+- [ ]  `test_plan.md` and `coverage_report.md` are completed
+- [ ]  Tests are well-documented and maintainable
+
+---
+
+When you're done, submit your files. Happy testing! 🧪

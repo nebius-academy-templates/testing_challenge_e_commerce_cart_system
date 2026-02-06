@@ -2,7 +2,6 @@ In this task, you'll team up with Cursor to write unit tests for a shopping cart
 
 ## 🛒 Project and goal
 
-Check that [**`testing_challenge_e_commerce_cart_system`**](https://github.com/nebius-academy-templates/testing_challenge_e_commerce_cart_system) has been added to your GitHub profile — you'll find all the code there.
 
 The core features of the shopping cart system are implemented in the `ShoppingCart` class:
 

@@ -254,4 +254,7 @@ class TestErrorHandling:
 ---
 
 When you're done, submit your files. Happy testing! 🧪
+
+---
+
 When submitting, all tests must be in the tests_for_check directory. ❗❗❗
